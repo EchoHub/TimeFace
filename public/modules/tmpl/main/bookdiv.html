@@ -1,0 +1,23 @@
+<div class="bookContainer" ng-controller="bookdivCtrl">
+    <div class="bookHome">
+        <h1 class="home-bookshelf-title" data-reactid=".2.1.$main.1.0.0">你记录的一切都可以快速成书</h1>
+        <span class="home-bookshelf-action">
+            <img src="../../../images/icon_go.png" class="guide-play" alt="">
+            <span>查看做书教程</span>
+        </span>
+        <ul class="book-ul">
+            <li ng-repeat="book in books" class="book-li" ng-mouseenter="bookContentShow($event)" ng-mouseleave="bookContentHide($event)">
+                <div>
+                    <img ng-src="{{book.url}}" alt="这是一本书" class="book-img"/>
+                    <div class="bookshelf-item-mask">
+                        <div class="bookshelf-item-more">
+                            <p class="book-info" ng-bind="book.content"></p>
+                            <a href="/" class="book-outline">在线预览</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="/" class="book-title" ng-bind="book.title"></a>
+            </li>
+        </ul>
+    </div>
+</div>

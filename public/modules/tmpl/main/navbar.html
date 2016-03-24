@@ -1,0 +1,32 @@
+<div ng-controller="navbarCtrl" class="header">
+    <a href="/" class="logo pull-left">
+        <img src="/images/logo.png" alt="this is a logo"/>
+    </a>
+    <ul class="navlist pull-left">
+        <li><a href="/">首页</a></li>
+        <li><a href="/">发现</a></li>
+        <li><a href="/">时光书</a></li>
+        <li ng-mouseenter="showList()" ng-mouseleave="hideList()"><a href="/"><span>一键导入</span>
+            <span class="caret"></span></a>
+            <ul class="dropdown-list" ng-show="openList">
+                <li><a href="/">微信时光书</a></li>
+                <li><a href="/">QQ时光书</a></li>
+                <li><a href="/">博客时光书</a></li>
+            </ul>
+        </li>
+        <li><a href="/">客户端</a></li>
+    </ul>
+
+    <ul class="right-menu pull-right">
+        <li><a href="/login">登录</a></li><li><a href="/reg">注册</a></li>
+    </ul>
+    <div class="experienceBox pull-right">
+        <a href="/">体验做书</a>
+    </div>
+    <div class="searchbar pull-right">
+        <div class="search-input pull-left">
+            <input type="text" placeholder="搜索" ng-click="showSearchBar($event)" class="search"/>
+        </div>
+        <span class="glyphicon glyphicon-search search-flag"></span>
+    </div>
+</div>

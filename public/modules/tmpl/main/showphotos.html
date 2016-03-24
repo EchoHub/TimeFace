@@ -1,0 +1,16 @@
+<div ng-controller="showphotosCtrl" class="showPContainer">
+    <div class="showPcMain">
+        <h1 class="titleH">用户晒单</h1>
+        <p class="titleP">青春、恋爱、回忆、旅行、生活感悟、小说随笔......将你记录的一切快速成书！</p>
+        <div class="showPDiv">
+            <div class="ft-col-md-4" ng-repeat="photo in photos" ng-mouseenter="showPcIntro($event)">
+                <img ng-src="{{photo.url}}" alt="这是一张图" class="showPc-img"/>
+                <div class="showPc-introduceCon">
+                    <div class="showPc-arrow"></div>
+                    <div class="showP-introduce" ng-bind="photo.content"></div>
+                    <a href="/" class="picLook">去看看</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
