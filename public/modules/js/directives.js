@@ -8,6 +8,14 @@ angular.module("TimeFace.directives",[])
             }
         }
     })
+    .directive("index",function(){
+        return{
+            templateUrl: _path + "main/index.html",
+            controller:'mainCtrl',
+            link:function(scope, ele, attr, ctrl){
+            }
+        }
+    })
     .directive("navbar",function(){
         return{
             templateUrl: _path + "/main/navbar.html",
@@ -34,7 +42,15 @@ angular.module("TimeFace.directives",[])
             templateUrl: _path + "/main/slider.html",
             controller:'sliderCtrl',
             link:function(scope, ele, attr, ctrl){
-
+                scope.changeSlider = function(event){
+                     var $item = $(event.target);
+                     var $sliderC = $item.parent('li');
+                    var index = $sliderC.index();
+                    $(".slider-circle").removeClass("circle-active");
+                    $item.addClass("circle-active");
+                    $(".imgDiv").removeClass("slide-active")
+                        .eq(index).addClass("slide-active");
+                }
             }
         }
     })

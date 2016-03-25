@@ -20,6 +20,10 @@ body{
     right: 0;
     top: 0;
     z-index: 1001;
+    max-width: 1400px;
+}
+.headerBg{
+    background: #2196F3;
 }
 .header .logo{
     display: inline-block;
@@ -172,12 +176,40 @@ body{
 .slideBox li{
     display: inline-block;
 }
-.slideBox .slick-slide .imgDiv{
-    background: url("../images/bg1.jpg")no-repeat;
-    height: 494px;
-    background-position: top;
+.slideBox .slick-slide{
     position: relative;
+    height: 494px;
+    width: 100%;
+}
+.slide-active{
+   opacity: 1!important;
+    z-index: 888;
+}
+.slideBox .slick-slide .bg1{
+    background: url("../images/slider/bg1.jpg")no-repeat;
+}
+.slideBox .slick-slide .bg2{
+    background: url("../images/slider/bg2.jpg")no-repeat;
+}
+.slideBox .slick-slide .bg3{
+    background: url("../images/slider/bg3.jpg")no-repeat;
+
+}
+.slideBox .slick-slide .bg4{
+    background: url("../images/slider/bg4.jpg")no-repeat;
+}
+.slideBox .slick-slide .bg5{
+    background: url("../images/slider/bg5.jpg")no-repeat;
+}
+.slideBox .slick-slide .imgDiv {
+    height: 494px;
     overflow: hidden;
+    position: absolute;
+    width: 100%;
+    /*left: -9999px;*/
+    opacity: 0;
+    transition: opacity ease 1s;
+    background-position: top;
 }
 .imgDiv .content{
     margin-left: 20%;
@@ -185,6 +217,40 @@ body{
     display: table;
     width: 400px;
     height: 494px;
+}
+.bg2 .content{
+    margin-left: calc(50% - 200px);
+}
+.bg4 .content,.bg5 .content{
+    left: 500px;
+}
+.sliderC-ul{
+    position: absolute;
+    width: 160px;
+    height: 12px;
+    bottom: 20px;
+    left: calc(50% - 80px);
+    list-style: none;
+    padding: 0;
+    z-index: 999;
+}
+.sliderC-ul li{
+    display: inline-block;
+    margin: 0 8px;
+}
+.sliderC-ul li .slider-circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid #fff;
+    display: block;
+}
+.sliderC-ul li .slider-circle:hover{
+    cursor: pointer;
+}
+.slider-circle.circle-active{
+    background: #fff!important;
 }
 .content .contentBox{
     display: table-cell;
@@ -645,5 +711,30 @@ body{
     text-decoration: none;
 }
 .flag-suggest,.flag-up{
-
+    width: 42px;
+    height: 42px;
+    right: 30px;
+    position: fixed;
+    cursor: pointer;
+    color: #FFFFFF;
+    border-radius: 5px;
+    z-index: 1030;
+}
+.flag-suggest {
+    bottom: 20px;
+    background: #808286 url("../images/flag2.png") no-repeat 50%;
+}
+.flag-up{
+    bottom: 70px;
+    background: #808286 url("../images/flag1.png")no-repeat 50%;
+}
+.upFlag,.suggestFlag{
+    width: 100%;
+    height: 100%;
+}
+.flag-up:hover{
+    background: #808286 url("../images/up.png")no-repeat 50%;
+}
+.flag-suggest:hover{
+    background: #808286 url("../images/suggest.png")no-repeat 50%;
 }

@@ -10,6 +10,16 @@ angular.module("TimeFace.controllers",['TimeFace.servers'])
 
             }
         };
+
+        angular.element(document).bind("scroll",function(){
+            var $item = $(".header");
+            var top = $item.offset().top;
+            if(top > 60){
+                $item.addClass("headerBg");
+            }else{
+                $item.removeClass("headerBg");
+            }
+        })
     })
     .controller("navbarCtrl",function($scope){})
     .controller("sliderCtrl",function($scope){})
@@ -21,7 +31,6 @@ angular.module("TimeFace.controllers",['TimeFace.servers'])
     .controller("bookfeatureCtrl",function($scope){})
     .controller("showphotosCtrl",function($scope, showpicSer){
         showpicSer.getData().then(function(res){
-            console.log(res)
             $scope.photos = res.data;
         })
     })
